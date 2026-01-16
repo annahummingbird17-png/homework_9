@@ -89,18 +89,58 @@ header{
     margin-left: 93px;
 }
 .filters-list{
-
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+.header-nav-list:hover .filters-list{
+    display: block;
+}
+.filter-part{
+    text-decoration: none;
+    color: var(--light-black-color);
+    padding: 5px 0 5px;
+    border: 1px solid var(--light-white-color);
+    display: flex;
+    align-items: center;
+    background: var(--brand-color);
+    font-size: 14px;
+    z-index: 1;
 }
 .header-nav-item{
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
-.filter-part{
+.filters-contacts{
+    top: 0;
+    right: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--brand-color);
+}
+.filters-list:hover .filters-contacts{
+    display: block;
+}
+.filter-contact{
     text-decoration: none;
     color: var(--light-black-color);
-    display:block;
+    border: 1px solid var(--light-white-color);
+    position: relative;
+    display: block;
+    padding: 15px;
+    background: var(--brand-color);
+    z-index: 2;
+    right: 100%;
+    top: -29px;
+    font-size: 14px;
 }
+/*.filter-tel{
+    white-space: nowrap;
+}*/
 .header-address{
     display: flex;
     column-gap: 50px;
@@ -125,7 +165,18 @@ header{
 }
 /*HERO*/
 .hero{
-    background: var(--dark-grey-color);
+    background-image: url('../img/hero-main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+
+}
+.hero::before{
+    content: '';
+    position: absolute;
+    inset:0;
+    background: rgba(47, 48, 58, 0.4);
 }
 .hero-container{
     min-height: 600px;
@@ -133,6 +184,7 @@ header{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 .hero-title{
     font-weight: 900;
@@ -170,20 +222,68 @@ header{
 }
 .planning-box{
     flex: 1 1 20%;
+    top: 0;
+    left: 0;
+    position: relative;
 }
+.planning-box::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 96px;
+    background: var(--light-white-color) url(../img/antenna.png) no-repeat center;
+    border: 1px solid var(--light-white-color);
+    border-radius: 4px;
+
+}
+
+.planning-box:nth-child(2)::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 96px;
+    background: var(--light-white-color) url(../img/clock.png) no-repeat center;
+    border: 1px solid var(--light-white-color);
+    border-radius: 4px;
+}
+.planning-box:nth-child(3)::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 96px;
+    background: var(--light-white-color) url(../img/diagram.png) no-repeat center;
+    border: 1px solid var(--light-white-color);
+    border-radius: 4px
+}
+.planning-box:nth-child(4)::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 96px;
+    background: var(--light-white-color) url(../img/astronaut.png) no-repeat center;
+    border: 1px solid var(--light-white-color);
+    border-radius: 4px;
+}
+
 .planning-title{
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 10px;
+    padding-top: 150px;
 }
 .planning-text{
     color: var(--grey-color);
     font-size: 14px;
     font-weight: 400;
-}
-.doing{
-
 }
 .doing-title{
     font-weight: 700;
@@ -198,10 +298,26 @@ header{
 .hero-img{
     height: 260px;
     flex: 1 1 30%;
+    position: relative;
 }
 .doing-images img{
     width:100%;
     object-fit: cover;
+}
+.doing-image-content{
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(47, 48, 58, 0.8);
+    color: var(--brand-color);
+    position: absolute;
+    height: 70px;
+    left: 0;
+    top: 224px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 /*TEAM*/
 .team{
