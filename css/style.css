@@ -94,7 +94,7 @@ header{
     left: 0;
     display: none;
 }
-.header-nav-list:hover .filters-list{
+.header-nav-item:hover .filters-list{
     display: block;
 }
 .filter-part{
@@ -114,28 +114,28 @@ header{
     justify-content: center;
     position: relative;
 }
+.header-filter{
+    position: relative;
+}
 .filters-contacts{
+    position: absolute;
     top: 0;
-    right: 0;
+    right: 100%;
     display: none;
     justify-content: center;
     align-items: center;
     background: var(--brand-color);
 }
-.filters-list:hover .filters-contacts{
+.header-filter:hover .filters-contacts{
     display: block;
 }
 .filter-contact{
     text-decoration: none;
     color: var(--light-black-color);
     border: 1px solid var(--light-white-color);
-    position: relative;
     display: block;
     padding: 15px;
     background: var(--brand-color);
-    z-index: 2;
-    right: 100%;
-    top: -29px;
     font-size: 14px;
 }
 /*.filter-tel{
@@ -222,9 +222,8 @@ header{
 }
 .planning-box{
     flex: 1 1 20%;
-    top: 0;
-    left: 0;
     position: relative;
+    padding-top:150px;
 }
 .planning-box::before{
     content:'';
@@ -232,7 +231,7 @@ header{
     top: 0;
     left: 0;
     right: 0;
-    bottom: 96px;
+    height: 120px;
     background: var(--light-white-color) url(../img/antenna.png) no-repeat center;
     border: 1px solid var(--light-white-color);
     border-radius: 4px;
@@ -278,7 +277,6 @@ header{
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 10px;
-    padding-top: 150px;
 }
 .planning-text{
     color: var(--grey-color);
@@ -303,6 +301,7 @@ header{
 .doing-images img{
     width:100%;
     object-fit: cover;
+    height: 100%;
 }
 .doing-image-content{
     font-size: 14px;
@@ -313,7 +312,7 @@ header{
     position: absolute;
     height: 70px;
     left: 0;
-    top: 224px;
+    bottom: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -346,7 +345,7 @@ header{
     object-fit: cover;
 }
 .team-description{
-    padding: 30px 0;
+    padding: 30px 0 16px 0;
 }
 .team-member-name{
     font-size: 16px;
@@ -359,8 +358,90 @@ header{
     font-size: 16px;
     font-weight: 400;
     text-align: center;
+}
+.social-link-member{
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #AFB1B8;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.team-member-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.social-icon-member{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
 
 }
+.social-icon-member svg{
+    width:20px;
+    height:20px;
+}
+.social-item:hover .social-link-member{
+    background-color: var( --light-blue-color) ;
+    color: var(--brand-color);
+}
+/*CUSTOMERS*/
+.customers-container{
+    padding: 90px 0 50px 0;
+}
+.customer-title{
+    font-weight: 700;
+    font-size: 36px;
+    color: var(--light-black-color);
+    text-align: center;
+}
+.customers-title{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.customers-members{
+
+}
+.customers-list{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.customer-link{
+    width: 170px;
+    height: 92px;
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #AFB1B8;
+}
+.customers-icon{
+    width:106px;
+    height:60px;
+}
+.customers-item:hover .customer-link{
+    color: var(--light-blue-color);
+    border-color: var(--light-blue-color);
+}
+.hidden{
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
 /*FOOTER*/
 footer{
     background: var(--dark-grey-color);
@@ -369,6 +450,11 @@ footer{
 }
 .footer-container{
     display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.footer-left{
+    display: block;
     flex-direction: column;
     align-items: start;
     gap: 20px;
@@ -376,6 +462,7 @@ footer{
 .footer-logo img{
     width: 161px;
     height: 31px;
+    margin-bottom: 20px;
 }
 .footer-address{
     display: flex;
@@ -396,6 +483,47 @@ footer{
     color: #FFFFFF99;
     text-decoration: none;
 }
+.join{
+    color: var(--brand-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 20px;
+
+}
+.footer-social{
+    margin-left: 70px;
+    align-items: center;
+}
+.social-list{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.social-link{
+    display: flex;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    color: var(--brand-color);
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+.social-icon{
+    width: 20px;
+    height: 20px;
+}
+.social-icon svg{
+    width:20px;
+    height:20px;
+}
+.social-item:hover .social-link{
+    background-color: var( --light-blue-color) ;
+}
+
 /*Portfolio*/
 .portfolio-container{
     background: var(--brand-color);
