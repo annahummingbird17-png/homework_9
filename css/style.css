@@ -90,9 +90,17 @@ header{
 }
 .filters-list{
     position: absolute;
+    top: -500%;
+    left: -500%;
+    opacity: 0;
+    transition-property: top,left, opacity;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
+}
+.header-nav-item:hover .filters-list{
     top: 100%;
-    left: 0;
-    display: none;
+    opacity: 1;
+    left:0;
 }
 .header-nav-item:hover .filters-list{
     display: block;
@@ -120,14 +128,20 @@ header{
 .filters-contacts{
     position: absolute;
     top: 0;
-    right: 100%;
-    display: none;
+    right: -500%;
+    opacity: 0;
     justify-content: center;
     align-items: center;
     background: var(--brand-color);
+    transition-property: bottom,right;
+    transition-duration: 2s;
+    transition-timing-function: ease-in-out;
 }
+
 .header-filter:hover .filters-contacts{
     display: block;
+    right:100%;
+    opacity: 1;
 }
 .filter-contact{
     text-decoration: none;
@@ -417,7 +431,6 @@ header{
 }
 
 .customer-link{
-    width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
@@ -425,6 +438,10 @@ header{
     justify-content: center;
     align-items: center;
     color: #AFB1B8;
+}
+.customers-item{
+    flex: 1 1 16%;
+
 }
 .customers-icon{
     width:106px;
@@ -566,25 +583,25 @@ footer{
     overflow: hidden;
     position: relative;
 }
-.portfolio-card img{
-    height: 294px;
-    width:100%;
-    object-fit: cover;
-}
 .portfolio-card:hover .portfolio-overlay{
     opacity: 1;
+    height:100%;
 }
 .portfolio-overlay{
     background: rgba(33, 150, 243, 0.9);
     font-weight: 400;
     color:var(--brand-color);
     font-size: 18px;
+    height:0;
     padding: 24px;
     position: absolute;
     inset:0;
     display: flex;
     align-items: center;
     opacity: 0;
+    transition-property: height, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
 }
 .portfolio-description{
     padding: 20px 24px;
