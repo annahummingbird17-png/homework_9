@@ -619,9 +619,40 @@ font-weight: 400;
 
 
 @media (max-width : 1024px) {
+
+    .planning-content {
+        flex-wrap: wrap;
+    }
     .planning-box {
         flex-basis: 47%;
     }
+    .doing {
+        display: none;
+    }
+    .team-members {
+        flex-wrap: wrap;
+    }
+
+    .team-member {
+        flex-basis: 47%;
+    }
+    .customers {
+        display: none;
+    }
+    .portfolio-cards {
+        margin-left: 50px;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-card {
+        flex-basis: 47%;
+    }
+    .portfolio-overlay{
+        display: none;
+    }
+
 }
 @media (max-width: 600px) {
     .header-logo img {
